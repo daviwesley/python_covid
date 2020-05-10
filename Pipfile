@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+mkdocs = "*"
+pytest = "*"
+pylint = "*"
+twine = "*"
+isort = "*"
+flake8 = "*"
+black = "*"
+pre-commit = "*"
+mkdocs-material = "*"
+
+[packages]
+python-covid = {editable = true,path = "."}
+requests = "*"
+
+[requires]
+python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true

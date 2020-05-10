@@ -1,0 +1,35 @@
+# To install the git pre-commit hook run:
+#   pre-commit install
+# To update the pre-commit hooks run:
+#   pre-commit install-hooks
+exclude: '^(.tox|ci/templates|.bumpversion.cfg)(/|$)'
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: master
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        language_version: python3
+      - id: trailing-whitespace
+      - id: debug-statements
+        language_version: python3
+      - id: fix-encoding-pragma
+        language_version: python3
+        args: [--remove]
+
+  - repo: https://github.com/timothycrosley/isort
+    rev: master
+    hooks:
+      - id: isort
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: master
+    hooks:
+      - id: flake8
+        args: ['--ignore=F403,W504,W503,F841,E401,F401,E402', '--max-line-length=120']
+
+  - repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3
